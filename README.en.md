@@ -12,7 +12,7 @@ A unified message notification system that supports ThinkPHP and Laravel framewo
 Install via Composer:
 
 ```bash
-composer require zhangxiaokang/message
+composer require xibeicity/message
 ```
 
 ## Configuration
@@ -22,7 +22,7 @@ composer require zhangxiaokang/message
 1. Copy the configuration file to your project's config directory:
 
 ```bash
-cp vendor/zhangxiaokang/message/config/message.php config/message.php
+cp vendor/xibeicity/message/config/message.php config/message.php
 ```
 
 2. Configure the related parameters in your .env file:
@@ -247,7 +247,7 @@ Response Example:
 1. Create a custom driver class implementing MessageInterface:
 
 ```php
-use Zhangxiaokang\Message\Contracts\MessageInterface;
+use xibeicity\Message\Contracts\MessageInterface;
 
 class CustomDriver implements MessageInterface
 {

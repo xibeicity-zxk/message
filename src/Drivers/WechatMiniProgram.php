@@ -1,23 +1,24 @@
 <?php
 
-namespace Zhangxiaokang\Message\Drivers;
+namespace Xibeicity\Message\Drivers;
 
-use Zhangxiaokang\Message\Contracts\MessageInterface;
+use Xibeicity\Message\Contracts\MessageInterface;
 use EasyWeChat\MiniApp\Application;
 
 class WechatMiniProgram implements MessageInterface
 {
     protected $app;
+    protected $config;
+    protected $error;
 
     public function __construct(array $config)
     {
+        $this->config = $config;
         $this->app = new Application([
             'app_id' => $config['app_id'],
             'secret' => $config['app_secret'],
         ]);
     }
-
-    protected $config;
 
     public function send(array $to, string $content, array $options = []): bool
     {
@@ -41,6 +42,7 @@ class WechatMiniProgram implements MessageInterface
             $response = $this->app->subscribe_message->send($message);
             return $response['errcode'] === 0;
         } catch (\Exception $e) {
+            $this->error = $e->getMessage();
             return false;
         }
     }
@@ -49,7 +51,12 @@ class WechatMiniProgram implements MessageInterface
     {
         return [
             'success' => true,
-            'message' => '消息已发送'
+            'message' => 'Message sent successfully'
         ];
+    }
+
+    public function getError(): ?string
+    {
+        return $this->error;
     }
 }

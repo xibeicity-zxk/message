@@ -1,13 +1,14 @@
 <?php
 
-namespace Zhangxiaokang\Message\Drivers;
+namespace Xibeicity\Message\Drivers;
 
-use Zhangxiaokang\Message\Contracts\MessageInterface;
+use Xibeicity\Message\Contracts\MessageInterface;
 use EasyWeChat\OfficialAccount\Application;
 
 class WechatOfficialAccount implements MessageInterface
 {
     protected $app;
+    protected $error;
 
     public function __construct(array $config)
     {
@@ -35,6 +36,7 @@ class WechatOfficialAccount implements MessageInterface
             $response = $this->app->template_message->send($message);
             return $response['errcode'] === 0;
         } catch (\Exception $e) {
+            $this->error = $e->getMessage();
             return false;
         }
     }
@@ -43,7 +45,12 @@ class WechatOfficialAccount implements MessageInterface
     {
         return [
             'success' => true,
-            'message' => '消息已发送'
+            'message' => 'Message sent successfully'
         ];
+    }
+
+    public function getError(): ?string
+    {
+        return $this->error;
     }
 }

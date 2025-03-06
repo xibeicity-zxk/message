@@ -1,10 +1,10 @@
 <?php
 
-namespace Zhangxiaokang\Message\Controllers;
+namespace Xibeicity\Message\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Zhangxiaokang\Message\Database\MessageLogger;
+use Xibeicity\Message\Database\MessageLogger;
 
 class MessageController
 {

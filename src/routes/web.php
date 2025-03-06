@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Zhangxiaokang\Message\Controllers\MessageController;
+use Xibeicity\Message\Controllers\MessageController;
 
 Route::prefix('message')->group(function () {
     // 消息列表

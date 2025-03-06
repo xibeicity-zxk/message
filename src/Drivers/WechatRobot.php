@@ -1,14 +1,15 @@
 <?php
 
-namespace Zhangxiaokang\Message\Drivers;
+namespace Xibeicity\Message\Drivers;
 
-use Zhangxiaokang\Message\Contracts\MessageInterface;
+use Xibeicity\Message\Contracts\MessageInterface;
 use GuzzleHttp\Client;
 
 class WechatRobot implements MessageInterface
 {
     protected $webhook;
     protected $client;
+    protected $error;
 
     public function __construct(array $config)
     {
@@ -40,6 +41,7 @@ class WechatRobot implements MessageInterface
             $result = json_decode($response->getBody()->getContents(), true);
             return $result['errcode'] === 0;
         } catch (\Exception $e) {
+            $this->error = $e->getMessage();
             return false;
         }
     }
@@ -48,7 +50,12 @@ class WechatRobot implements MessageInterface
     {
         return [
             'success' => true,
-            'message' => '消息已发送'
+            'message' => 'Message sent successfully'
         ];
+    }
+
+    public function getError(): ?string
+    {
+        return $this->error;
     }
 }

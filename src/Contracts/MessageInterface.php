@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhangxiaokang\Message\Contracts;
+namespace Xibeicity\Message\Contracts;
 
 interface MessageInterface
 {

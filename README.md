@@ -12,7 +12,7 @@
 通过Composer安装：
 
 ```bash
-composer require zhangxiaokang/message
+composer require xibeicity/message
 ```
 
 ## 配置
@@ -22,7 +22,7 @@ composer require zhangxiaokang/message
 1. 复制配置文件到项目的config目录：
 
 ```bash
-cp vendor/zhangxiaokang/message/config/message.php config/message.php
+cp vendor/xibeicity/message/config/message.php config/message.php
 ```
 
 2. 在.env文件中配置相关参数：
@@ -247,7 +247,7 @@ GET /message/list
 1. 创建自定义驱动类，实现MessageInterface接口：
 
 ```php
-use Zhangxiaokang\Message\Contracts\MessageInterface;
+use Xibeicity\Message\Contracts\MessageInterface;
 
 class CustomDriver implements MessageInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Zhangxiaokang\Message;
+namespace Xibeicity\Message;
 
-use Zhangxiaokang\Message\Contracts\MessageInterface;
+use Xibeicity\Message\Contracts\MessageInterface;
 
 class MessageManager
 {
