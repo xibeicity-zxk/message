@@ -1,9 +1,9 @@
 <?php
 
-namespace Zhangxiaokang\Message\Laravel;
+namespace Xibeicity\Message\Laravel;
 
 use Illuminate\Support\ServiceProvider;
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 class MessageServiceProvider extends ServiceProvider
 {

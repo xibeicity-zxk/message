@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhangxiaokang\Message\Drivers;
+namespace Xibeicity\Message\Drivers;
 
 use Zhangxiaokang\Message\Contracts\MessageInterface;
 use GuzzleHttp\Client;

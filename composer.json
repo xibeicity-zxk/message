@@ -1,36 +1,36 @@
 {
-    "name": "zhangxiaokang/message",
-    "description": "A unified message notification system for ThinkPHP and Laravel",
-    "type": "library",
-    "license": "MIT",
-    "require": {
-        "php": ">=7.2",
-        "topthink/framework": "^6.0",
-        "illuminate/support": "^8.0|^9.0",
-        "alibabacloud/dysmsapi-20170525": "^2.0",
-        "alibabacloud/dingtalk": "^2.0",
-        "w7corp/easywechat": "^5.0",
-        "guzzlehttp/guzzle": "^7.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^8.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Zhangxiaokang\\Message\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Zhangxiaokang\\Message\\Laravel\\MessageServiceProvider"
-            ]
-        }
-    },
-    "authors": [
-        {
-            "name": "zhangxiaokang"
-        }
-    ],
-    "minimum-stability": "stable"
+	"name": "xibeicity/message",
+	"description": "A unified message notification system for ThinkPHP and Laravel",
+	"type": "library",
+	"license": "MIT",
+	"require": {
+		"php": ">=7.2",
+		"topthink/framework": "^6.0",
+		"illuminate/support": "^8.0|^9.0",
+		"alibabacloud/dysmsapi-20170525": "^2.0",
+		"alibabacloud/dingtalk": "^2.0",
+		"w7corp/easywechat": "^5.0",
+		"guzzlehttp/guzzle": "^7.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^8.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Xibeicity\\Message\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Xibeicity\\Message\\Laravel\\MessageServiceProvider"
+			]
+		}
+	},
+	"authors": [
+		{
+			"name": "zhangxiaokang"
+		}
+	],
+	"minimum-stability": "stable"
 }

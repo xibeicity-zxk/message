@@ -71,7 +71,7 @@ php think migrate:run
 1. 发布配置文件：
 
 ```bash
-php artisan vendor:publish --provider="Zhangxiaokang\Message\Laravel\MessageServiceProvider"
+php artisan vendor:publish --provider="Xibeicity\Message\Laravel\MessageServiceProvider"
 ```
 
 2. 在.env文件中配置相关参数（同ThinkPHP配置）
@@ -87,7 +87,7 @@ php artisan migrate
 ### 发送短信
 
 ```php
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 $message = new MessageManager();
 
@@ -106,7 +106,7 @@ $message->driver('sms')->send(['13800138000'], '', [
 ### 发送钉钉工作通知
 
 ```php
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 $message = new MessageManager();
 
@@ -123,7 +123,7 @@ $message->driver('dingtalk')->send(['user123'], '请查看详情', [
 ### 发送钉钉群机器人消息
 
 ```php
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 $message = new MessageManager();
 
@@ -139,7 +139,7 @@ $message->driver('dingtalk_robot')->send(['@all'], '# 标题\n内容', [
 ### 发送微信公众号模板消息
 
 ```php
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 $message = new MessageManager();
 
@@ -158,7 +158,7 @@ $message->driver('wechat_official_account')->send(['OPENID'], '', [
 ### 发送微信小程序订阅消息
 
 ```php
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 $message = new MessageManager();
 
@@ -177,7 +177,7 @@ $message->driver('wechat_mini_program')->send(['OPENID'], '', [
 ### 发送微信群机器人消息
 
 ```php
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 $message = new MessageManager();
 
@@ -277,7 +277,7 @@ class CustomDriver implements MessageInterface
 2. 注册自定义驱动：
 
 ```php
-use Zhangxiaokang\Message\MessageManager;
+use Xibeicity\Message\MessageManager;
 
 $message = new MessageManager();
 $message->extend('custom', function () {

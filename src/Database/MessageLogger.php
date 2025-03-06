@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhangxiaokang\Message\Database;
+namespace Xibeicity\Message\Database;
 
 use Illuminate\Support\Facades\DB;
 use Think\Db\Facade\Db as ThinkDb;
